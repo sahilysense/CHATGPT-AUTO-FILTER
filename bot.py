@@ -10,7 +10,7 @@ import pymongo
 
 # Initialize the Telegram Bot
 bot = Bot(token=6604579831:AAGFo_9Z8qAcNT9ohNuQPuBkqccMuGT6XPs)
-updater = Updater(token=6604579831:AAGFo_9Z8qAcNT9ohNuQPuBkqccMuGT6XPs, use_context=True)
+updater = Updater(6604579831:AAGFo_9Z8qAcNT9ohNuQPuBkqccMuGT6XPs, use_context=True)
 dispatcher = updater.dispatcher
 
 # MongoDB setup
