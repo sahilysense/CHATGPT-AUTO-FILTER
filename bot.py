@@ -22,13 +22,26 @@ collection = db["Telegram_files"]
 
 # Command handlers
 def start(update, context):
-    # ...
+    context.bot.send_message(update.effective_chat.id, "Hello! I am your Auto Filer Bot. You can use /broadcast to broadcast a message.")
 
 def broadcast(update, context):
-    # ...
+    if update.effective_user.id in ADMINS:
+        message = ' '.join(context.args)
+        for channel in CHANNELS:
+            context.bot.send_message(channel, message)
+    else:
+        context.bot.send_message(update.effective_chat.id, "You are not authorized to use this command.")
 
 def search(update, context):
-    # ...
+    query = ' '.join(context.args)
+    results = collection.find({"$text": {"$search": query}})
+    response = "Search results:\n"
+    for result in results:
+        response += f"{result['name']} - {result['link']}\n"
+    if response != "Search results:\n":
+        context.bot.send_message(update.effective_chat.id, response)
+    else:
+        context.bot.send_message(update.effective_chat.id, "No results found for your query.")
 
 # ... Other handlers and functions based on your requirements ...
 
