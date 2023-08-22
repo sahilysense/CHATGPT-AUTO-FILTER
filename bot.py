@@ -66,7 +66,7 @@ LOG_STR += f"Your current IMDb template is {IMDB_TEMPLATE}"
 
 ## EXTRA FEATURES ##
     
-      # URL Shortener #
-
+# URL Shortener
 URL_SHORTENR_WEBSITE = environ.get('URL_SHORTENR_WEBSITE', 'omegalinks.in')
-URL_SHORTNER_WEBSITE_API = environ.get('URL_SHORTNER_WEBSITE_API', '7570653688b21e9eba68303b57b83e
+URL_SHORTNER_WEBSITE_API = environ.get('URL_SHORTNER_WEBSITE_API', '7570653688b21e9eba68303b57b83e6ae982cc39')
+
