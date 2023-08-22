@@ -9,14 +9,16 @@ import pymongo
 # ...
 
 # Initialize the Telegram Bot
-bot = Bot(token=6604579831:AAGFo_9Z8qAcNT9ohNuQPuBkqccMuGT6XPs)
-updater = Updater(6604579831:AAGFo_9Z8qAcNT9ohNuQPuBkqccMuGT6XPs, use_context=True)
+bot = Bot(token="6604579831:AAGFo_9Z8qAcNT9ohNuQPuBkqccMuGT6XPs")
+updater = Updater("6604579831:AAGFo_9Z8qAcNT9ohNuQPuBkqccMuGT6XPs", use_context=True)
+
 dispatcher = updater.dispatcher
 
 # MongoDB setup
-client = pymongo.MongoClient(mongodb+srv://popindiax_bot:sahil@8989@cluster0.1t8euz3.mongodb.net/?retryWrites=true&w=majority)
-db = client[Cluster0]
-collection = db[Telegram_files]
+client = pymongo.MongoClient("mongodb+srv://popindiax_bot:sahil@8989@cluster0.1t8euz3.mongodb.net/?retryWrites=true&w=majority")
+db = client["Cluster0"]
+collection = db["Telegram_files"]
+
 
 # Command handlers
 def start(update, context):
